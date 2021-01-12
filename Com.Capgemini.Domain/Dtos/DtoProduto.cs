@@ -1,5 +1,4 @@
-﻿using Com.Capgemini.Domain.Entidades;
-using System;
+﻿using System;
 
 namespace Com.Capgemini.Domain.Dtos
 {

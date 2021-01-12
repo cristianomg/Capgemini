@@ -1,13 +1,10 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Com.Capgemini.Domain.Dtos;
-using Com.Capgemini.Domain.Entidades;
 using Com.Capgemini.Domain.Interfaces.Repositories;
 using Com.Capgemini.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;

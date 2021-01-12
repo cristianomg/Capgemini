@@ -1,7 +1,6 @@
 ﻿using Com.Capgemini.Domain.Entidades;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Com.Capgemini.Domain.Interfaces.Repositories
 {

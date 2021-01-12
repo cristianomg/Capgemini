@@ -4,7 +4,6 @@ using Com.Capgemini.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Com.Capgemini.Infra.Repositories
 {
