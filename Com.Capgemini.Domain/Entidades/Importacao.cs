@@ -7,7 +7,7 @@ namespace Com.Capgemini.Domain.Entidades
     public class Importacao : Entidade<Guid>
     {
         public DateTime DtImportacao { get; set; }
-        public IEnumerable<Produto> Produtos { get; set; }
+        public virtual ICollection<Produto> Produtos { get; set; }
 
     }
 }

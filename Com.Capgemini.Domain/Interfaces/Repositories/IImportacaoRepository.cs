@@ -1,6 +1,7 @@
 ﻿using Com.Capgemini.Domain.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Com.Capgemini.Domain.Interfaces.Repositories
@@ -10,7 +11,9 @@ namespace Com.Capgemini.Domain.Interfaces.Repositories
         void Atualizar(Importacao importacao);
         void Deletar(Importacao importacao);
         Importacao Inserir(Importacao importacao);
-        Task<Importacao> ObterPorId(Guid id);
-        Task<IEnumerable<Importacao>> ObterTodos();
+        Importacao ObterPorId(Guid id);
+        Importacao ObterPorId(Guid id, List<string> includes);
+        IQueryable<Importacao> ObterTodos();
+        IQueryable<Importacao> ObterTodos(params string[] includes);
     }
 }

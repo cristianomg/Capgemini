@@ -27,14 +27,14 @@ namespace Com.Capgemini.Infra.Repositories
         public Produto Inserir(Produto produto) =>
             _dbSet.Add(produto).Entity;
 
-        public async Task Inserir(List<Produto> produtos)
-            => await _dbSet.AddRangeAsync(produtos);
+        public void Inserir(List<Produto> produtos)
+            => _dbSet.AddRange(produtos);
 
-        public async Task<Produto> ObterPorId(Guid id) =>
-            await _dbSet.FindAsync(id);
+        public Produto ObterPorId(Guid id) =>
+            _dbSet.Find(id);
 
 
-        public async Task<IEnumerable<Produto>> ObterTodos() =>
-            await _dbSet.ToListAsync();
+        public IEnumerable<Produto> ObterTodos() =>
+            _dbSet.AsQueryable();
     }
 }

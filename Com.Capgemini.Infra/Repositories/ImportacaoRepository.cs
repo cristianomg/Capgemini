@@ -4,6 +4,7 @@ using Com.Capgemini.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Com.Capgemini.Infra.Repositories
@@ -24,11 +25,30 @@ namespace Com.Capgemini.Infra.Repositories
         public Importacao Inserir(Importacao importacao) =>
             _dbSet.Add(importacao).Entity;
 
-        public async Task<Importacao> ObterPorId(Guid id) =>
-            await _dbSet.FindAsync(id);
+        public Importacao ObterPorId(Guid id) =>
+            _dbSet.Find(id);
 
+        public Importacao ObterPorId(Guid id, List<string> includes)
+        {
+            var dados = _dbSet.AsQueryable();
+            foreach (var x in includes)
+            {
+                dados.Include(x);
+            }
+            return _dbSet.Find(id);
+        }
+        public IQueryable<Importacao> ObterTodos() =>
+            _dbSet.AsQueryable();
 
-        public async Task<IEnumerable<Importacao>> ObterTodos() =>
-            await _dbSet.ToListAsync();
+        public IQueryable<Importacao> ObterTodos(params string[] includes)
+        {
+            var dados = _dbSet.AsQueryable();
+
+            foreach(var x in includes)
+            {
+                dados.Include(x);
+            }
+            return dados;
+        }
     }
 }

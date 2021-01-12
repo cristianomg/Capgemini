@@ -11,8 +11,8 @@ namespace Com.Capgemini.Domain.Interfaces.Repositories
         void Atualizar(List<Produto> produtos);
         void Deletar(Produto produto);
         Produto Inserir(Produto produto);
-        Task Inserir(List<Produto> produtos);
-        Task<Produto> ObterPorId(Guid id);
-        Task<IEnumerable<Produto>> ObterTodos();
+        void Inserir(List<Produto> produtos);
+        Produto ObterPorId(Guid id);
+        IEnumerable<Produto> ObterTodos();
     }
 }
