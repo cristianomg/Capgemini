@@ -58,7 +58,7 @@ const Dashboard: React.FC = () => {
                 return (
                 <tr key={importacao.id} onClick={()=>handleClickImportacao(importacao.id)}>
                 <td className="title">{importacao.id}</td>
-                <td>{importacao.dtImportacao}</td>
+                <td>{new Date(importacao.dtImportacao).toLocaleDateString('pt-BR')}</td>
                 <td>{importacao.produtos.length}</td>
               </tr>)
               })}

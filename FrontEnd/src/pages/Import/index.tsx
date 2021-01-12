@@ -34,7 +34,7 @@ const Import: React.FC = () => {
           },
         }).then(()=> {
           history.push('/');
-        }).catch((erro)=>console.log(erro))
+        }).catch((erro)=>console.log(erro.response))
       });
     } catch (err) {
       console.log(err)

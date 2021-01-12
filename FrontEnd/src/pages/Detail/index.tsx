@@ -50,7 +50,7 @@ const Detail: React.FC = () => {
                 <td>{produto.nmProduto}</td>
                 <td>{produto.quantidade}</td>
                 <td>{produto.vlUnitario}</td>
-                <td>{produto.dtEntrega}</td>
+                <td>{new Date(produto.dtEntrega).toLocaleDateString('pt-BR')}</td>
               </tr>)
               })}
             </tbody>
